@@ -319,3 +319,9 @@ GrB_Info LAGraph_1_to_n     // create an integer vector v = 1:n
     GrB_Vector *v_handle,   // vector to create
     GrB_Index n             // size of vector to create
 ) ;
+
+GrB_Info LAGraph_cc_fastsv (
+    GrB_Vector *result,     // output: array of component identifiers
+    GrB_Matrix A,           // input matrix
+    bool sanitize           // if true, ensure A is symmetric
+) ;
