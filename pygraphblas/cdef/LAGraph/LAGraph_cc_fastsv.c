@@ -35,7 +35,7 @@
 
 #define LAGRAPH_FREE_ALL
 
-#include "LAGraph.h"
+#include "LAGraph_internal.h"
 
 // mask = NULL, accumulator = GrB_MIN_UINT64, descriptor = NULL
 static GrB_Info Reduce_assign (GrB_Vector w, GrB_Vector src, GrB_Index *index, GrB_Index nLocs)
