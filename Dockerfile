@@ -40,14 +40,17 @@ RUN cd .. && /bin/rm -Rf GraphBLAS
 
 RUN conda install -y graphviz
 
-ADD . /home/jovyan
+ADD notebook-requirements.txt /home/jovyan/notebook-requirements.txt
 WORKDIR /home/jovyan
-    
-RUN python setup.py clean
-RUN python setup.py develop
+
 RUN pip install -r notebook-requirements.txt
 RUN jupyter nbextension install rise --py --sys-prefix
 RUN jupyter nbextension enable rise --py --sys-prefix
+
+ADD . /home/jovyan
+RUN python setup.py clean
+RUN python setup.py develop
+
 RUN chown -R jovyan /home/jovyan
 
 RUN ldconfig
