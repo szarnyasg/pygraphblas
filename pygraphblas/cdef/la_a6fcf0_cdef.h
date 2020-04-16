@@ -320,6 +320,18 @@ GrB_Info LAGraph_1_to_n     // create an integer vector v = 1:n
     GrB_Index n             // size of vector to create
 ) ;
 
+GrB_Info LAGraph_bfs_pushpull   // push-pull BFS, or push-only if AT = NULL
+(
+    GrB_Vector *v_output,   // v(i) is the BFS level of node i in the graph
+    GrB_Vector *pi_output,  // pi(i) is the parent of node i in the graph.
+                            // if NULL, the parent is not computed
+    GrB_Matrix A,           // input graph, treated as if boolean in semiring
+    GrB_Matrix AT,          // transpose of A (optional; push-only if NULL)
+    int64_t s,              // starting node of the BFS (s < 0: whole graph)
+    int64_t max_level,      // optional limit of # levels to search
+    bool vsparse            // if true, v is expected to be very sparse
+) ;
+
 GrB_Info LAGraph_cc_fastsv (
     GrB_Vector *result,     // output: array of component identifiers
     GrB_Matrix A,           // input matrix
