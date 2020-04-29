@@ -7,4 +7,5 @@ services:
   - docker
 
 script:
-  - ./test.sh pull
+  - ./build-custom.sh
+  - ./test.sh
