@@ -7,6 +7,17 @@ from pygraphblas import *
 from pygraphblas.base import _check
 
 
+def test_bitwise():
+    u = Vector.from_lists([1], [5], typ=UINT64)
+    v = Vector.from_lists([1], [9], typ=UINT64)
+
+    w = u.eadd(v, v.type.BOR)
+
+    print(w, w.type)
+    print(w.to_string())
+
+    assert w[1] == 5 | 9
+
 def test_vector_init_without_type():
     vec = Vector.from_type(INT8)
 
