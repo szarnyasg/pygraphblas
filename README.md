@@ -18,10 +18,11 @@ An installation script for Ubuntu 18.04 is provided in the `install-ubuntu.sh` f
 
 ## Docker 
 
-pygraphblas is distributed as a docker image on [Docker
-Hub](https://cloud.docker.com/repository/docker/pygraphblas/pygraphblas/general)
-and can be run with the command:
+For this custom build run the following: 
 
+    export SS_RELEASE=v3.3.0draft5
+    ./build.sh ${SS_RELEASE} notebook master
+    ./build-custom.sh ${SS_RELEASE} notebook
     docker run --rm -it graphblas/pygraphblas-notebook:custom ipython
 
 ## Tutorial

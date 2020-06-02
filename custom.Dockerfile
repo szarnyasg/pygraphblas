@@ -1,13 +1,12 @@
-FROM graphblas/pygraphblas-notebook:latest
+ARG BASE_CONTAINER
+FROM ${BASE_CONTAINER}
 
 USER root
 
 ADD . /home/jovyan
-RUN python setup.py clean
-RUN python setup.py develop
+WORKDIR /home/jovyan
 
-RUN chown -R jovyan /home/jovyan
+RUN python3 setup.py clean
+RUN python3 setup.py develop
 
 RUN ldconfig
-
-USER jovyan
