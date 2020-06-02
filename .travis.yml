@@ -1,11 +1,6 @@
-language: python
-
-python:
-  - "3.7"
-
-services:
+gitservices:
   - docker
 
 script:
-  - ./build-custom.sh
+  - docker build -f Dockerfile-minimal --build-arg SS_RELEASE=v3.2.0 -t graphblas/pygraphblas-minimal:latest .
   - ./test.sh
