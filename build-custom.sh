@@ -9,5 +9,4 @@ fi
 SS_RELEASE=$1
 BASE_NAME=$2
 
-/bin/rm -Rf docker_build
 docker build --build-arg BASE_CONTAINER=graphblas/pygraphblas-${BASE_NAME}:${SS_RELEASE} -t graphblas/pygraphblas-${BASE_NAME}:custom . -f custom.Dockerfile

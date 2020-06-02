@@ -21,7 +21,7 @@ An installation script for Ubuntu 18.04 is provided in the `install-ubuntu.sh` f
 For this custom build run the following: 
 
     export SS_RELEASE=v3.3.0draft5
-    SS_COMPACT=1 ./build.sh ${SS_RELEASE} notebook master
+    SS_COMPACT=1 ./build.sh ${SS_RELEASE} notebook
     ./build-custom.sh ${SS_RELEASE} notebook
     docker run --rm -it graphblas/pygraphblas-notebook:custom ipython
 
