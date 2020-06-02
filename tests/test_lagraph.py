@@ -6,7 +6,7 @@ from pygraphblas.lagraph import LAGraph_bfs_pushpull
 
 
 def test_bfs_pushpull():
-    adj = Matrix.from_type(BOOL, 4, 4)
+    adj = Matrix.sparse(BOOL, 4, 4)
     adj[0, 1] = True
     adj[1, 2] = True
 
