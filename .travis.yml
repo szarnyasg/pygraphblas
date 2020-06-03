@@ -2,5 +2,5 @@ gitservices:
   - docker
 
 script:
-  - docker build -f Dockerfile-minimal --build-arg SS_COMPACT=1 --build-arg SS_RELEASE=v3.3.0draft5 -t graphblas/pygraphblas-minimal:custom .
+  - docker build -f Dockerfile-notebook --build-arg SS_COMPACT=1 --build-arg SS_RELEASE=v3.3.0draft5 -t graphblas/pygraphblas-notebook:custom .
   - ./test.sh
