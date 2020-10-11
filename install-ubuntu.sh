@@ -21,7 +21,7 @@ cd ../..
 
 # Install Python components
 sudo apt install -y python3-pip
-pip3 install -r notebook-requirements.txt
+pip3 install -r notebook-requirements.txt --user
 
 # Install pygraphblas as a user (does not require root privileges)
 python3 setup.py install --user
